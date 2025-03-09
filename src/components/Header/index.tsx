@@ -35,7 +35,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
   return (
     <>
       <Helmet>
-        <title>RPM - {pageTitle}</title>
+        <title>MediGuard Assurance-{pageTitle}</title>
       </Helmet>
       <AppBar className={styles.appBar} style={{}}>
         <AppBarSection>
@@ -58,7 +58,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
             )}
           </div>
         </AppBarSection>
-        <h4 style={{ marginLeft: "10px" }}>WeCare Hospitals</h4>
+        <h4 style={{ marginLeft: "10px" }}>MediGuard Assurance</h4>
         <AppBarSpacer />
 
         {/* <div className={styles.selectedComponentsText}>

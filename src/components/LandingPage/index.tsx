@@ -551,7 +551,7 @@
 import { FC } from "react";
 import styles from "./styles.module.scss";
 import { PageType } from "types";
-import Image from './DEM_Solution.png'
+import Image from './MediGuardLandingPage.png';
 
 interface Props {
   pageTitle: string;
