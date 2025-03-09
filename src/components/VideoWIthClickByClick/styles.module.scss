@@ -1,0 +1,268 @@
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+  background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_login_background.png);
+  background-size: cover;
+  padding: 4% 1% 1% 1%;
+  .videoTitle {
+    position: absolute;
+    top: 2.3%;
+    left: 11%;
+    // transform: translate(-50%, 2%);
+    color: #013056;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}
+.ButtonNew {
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: none;
+  color: #525252;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #adadad;
+  height: 35px;
+}
+r {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+}
+.Button2New {
+  margin: 0;
+  background-color: #ffffff;
+  color: #525252;
+  border: 1px solid #adadad;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  height: 35px;
+  font-size: medium;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circleRadioBtn {
+  height: 11px;
+  width: 11px;
+  border: 1px solid #525252;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.activeButton {
+  // background-color: #e6f2ff;
+  border: 1px solid #0078d7;
+  height: 35px;
+  color: #0078d4;
+  background-color: #ffffff;
+  .circleRadioBtn {
+    background-color: #549c30;
+    animation: glow 1s infinite ease-in-out;
+    border: none;
+  }
+}
+.disabledButton {
+  background-color: rgba(225, 214, 214, 0.567);
+
+  cursor: not-allowed !important;
+  margin: 0;
+  // background-color: #ffffff8f;
+  color: #525252;
+  border: 1px solid #adadad;
+  padding: 10px 20px;
+
+  outline: none;
+  height: 35px;
+  font-size: medium;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px #549c30;
+  }
+  50% {
+    box-shadow: 0 0 10px #549c30, 0 0 15px #549c30, 0 0 20px #549c30;
+  }
+
+  100% {
+    box-shadow: 0 0 15px #549c30, 0 0 20px #549c30, 0 0 25px #549c30;
+  }
+}
+.Button2New:hover {
+  background-color: #0078d4;
+  color: #ffffff;
+}
+.ButtonNew:hover {
+  background-color: #0078d4;
+  color: #ffffff;
+  .circleRadioBtn {
+    background-color: #549c30;
+    border: none;
+    animation: none;
+  }
+}
+.toggleButtonsContainer {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 2%;
+  right: 8%;
+}
+
+.subContainer {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+}
+
+.azureMediaPlayerWrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 10px);
+  padding: 0 12px;
+  padding-top: 12px;
+}
+
+.videoTag {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 66px);
+  padding: 0 12px;
+  padding-top: 12px;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.iframe {
+  width: 100%;
+  height: calc(100% - 10px);
+  // padding: 0 12px;
+  // padding-top: 12px;
+  border: unset;
+  background-color: unset;
+}
+.subContainer {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  overflow: auto;
+}
+
+.iframeForDashboard {
+  width: 100%;
+  height: 100%;
+  border: unset;
+  background-color: unset;
+}
+
+.backArrow {
+  background-color: black;
+  a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    width: max-content;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.playIcon {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+
+  width: 100px;
+}
+@media screen and (max-width: 1650px) {
+  .videoTitle {
+    font-size: 1.3rem !important;
+  }
+  .playIcon {
+    left: 35%;
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .videoTitle {
+    font-size: 1.2rem !important;
+  }
+  .playIcon {
+    left: 35%;
+    width: 80px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .videoTitle {
+    font-size: 1.1rem !important;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .videoTitle {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 1270px) {
+  .videoTitle {
+    font-size: 0.9rem !important;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .videoTitle {
+    font-size: 0.8rem !important;
+  }
+}
+.productCardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.productCard {
+  border: 2px solid #ddd;
+  padding: 30px 30px;
+  text-align: start;
+  border-radius: 8px;
+  background-color: #ffffff;
+  position: relative;
+
+  video {
+    border: 2px solid #bcbcbc;
+    border-radius: 5px;
+  }
+}
+
+.productCard h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.productCard p {
+  font-size: 14px;
+  color: #666;
+}

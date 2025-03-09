@@ -1,0 +1,133 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.summaryBtn {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: none;
+  }
+
+  &:last-child {
+    margin-top: 10px;
+  }
+}
+
+.textArea {
+  textarea {
+    max-height: 450px;
+  }
+}
+
+.popup {
+  padding: 0;
+}
+
+.initiateBtn {
+  position: absolute;
+  bottom: 7%;
+  left: 17%;
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .initiateBtn {
+    bottom: 3%;
+    left: 16%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .initiateBtn {
+    bottom: 5%;
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .initiateBtn {
+    bottom: 8%;
+    left: 14%;
+  }
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.summaryContainer {
+  display: flex;
+  height: 100%;
+  padding: 25px 50px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+.avatar {
+  z-index: 1;
+  color: white;
+  height: 100%;
+  text-align: center;
+  width: 250px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.summary {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  flex-direction: column;
+  z-index: 1;
+  color: white;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.conversationContainer {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}

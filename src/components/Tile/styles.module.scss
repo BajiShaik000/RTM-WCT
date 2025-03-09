@@ -1,0 +1,159 @@
+.container {
+  gap: 10px;
+  height: 50px;
+  width: 290px;
+  border-radius: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 2px solid;
+  border-color: #725697 !important;
+
+  padding-left: 20px;
+  background-color: #ffff;
+  cursor: pointer;
+  z-index: 999;
+  background-clip: padding-box;
+  background-origin: border-box;
+  // background-image: linear-gradient(#ffff, #ffff),
+  //   linear-gradient(268deg, #4878bd -23.75%, #5275bc 39.6%, #b360b7 98.3%);
+  // background-clip: padding-box, border-box;
+  // background-origin: padding-box, border-box;
+  // background-size: padding-box, border-box;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border: 2px solid #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(91.39deg, #ade7f9 3.22%, #c8b0f7 97.14%);
+
+    background-origin: padding-box;
+    color: #ffff;
+
+    h4 {
+      color: #12466f;
+    }
+
+    svg {
+      path {
+        fill: #12466f !important;
+      }
+    }
+  }
+
+  h4 {
+    margin: 0;
+    color: #0078d7;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-align: left;
+  }
+}
+.titleContainer {
+  width: 75%;
+}
+.activeTile {
+  gap: 10px;
+  height: 50px;
+  width: 290px;
+  border-radius: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 20px;
+  background-color: #ffff;
+  border: 2px solid #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: linear-gradient(91.39deg, #ade7f9 3.22%, #c8b0f7 97.14%);
+
+  background-origin: padding-box;
+  color: #12466f;
+  h4 {
+    margin: 0;
+    color: #12466f;
+
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-align: left;
+  }
+
+  svg {
+    path {
+      fill: #12466f;
+    }
+  }
+}
+.solutionPlay {
+  background-color: #c5e9ff !important;
+}
+.tileItem {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+}
+.disabled {
+  cursor: not-allowed;
+  color: #725697 !important;
+  border: 2px solid !important;
+  border-color: #725697 !important;
+  background: linear-gradient(
+    91.39deg,
+    rgba(173, 231, 249, 0.7) 3.22%,
+    rgba(200, 176, 247, 0.7) 97.14%
+  );
+}
+.childNode {
+  height: 45px !important;
+}
+@media screen and (max-width: 1600px) {
+  .container {
+    width: 290px;
+  }
+  .activeTile {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .container {
+    width: 250px;
+  }
+  .activeTile {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 230px;
+  }
+  .activeTile {
+    width: 230px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .container {
+    width: 200px;
+  }
+  .activeTile {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    width: 170px;
+  }
+  .activeTile {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .container {
+    width: 140px;
+  }
+  .activeTile {
+    width: 140px;
+  }
+}

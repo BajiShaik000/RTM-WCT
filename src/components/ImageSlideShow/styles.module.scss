@@ -1,0 +1,81 @@
+.container {
+  background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_login_background.png);
+  background-size: cover;
+  padding: 4% 6.5%;
+}
+
+.container,
+.image {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  // background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_login_background.png);
+  // background-size: cover;
+}
+.subContainer {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+
+  position: relative;
+}
+
+.image {
+  height: calc(100% - 10px);
+  padding: 0 12px;
+  padding-top: 12px;
+  object-fit: contain;
+}
+
+.nextArrow {
+  position: absolute;
+  bottom: 430px;
+  transform: scale(0.5);
+  right: 0px;
+  cursor: pointer;
+  z-index: 999;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  top: 40%;
+}
+
+.prevArrow {
+  position: absolute;
+  bottom: 430px;
+  transform: scale(0.5);
+  left: 0px;
+  cursor: pointer;
+  z-index: 999;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  top: 40%;
+}
+
+@media screen and (max-width: 1700px) {
+  .nextArrow {
+    right: -1%;
+  }
+  .prevArrow {
+    left: -1%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .nextArrow {
+    right: -3%;
+  }
+  .prevArrow {
+    left: -3%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .nextArrow {
+    right: -3.5%;
+  }
+  .prevArrow {
+    left: -3.5%;
+  }
+}

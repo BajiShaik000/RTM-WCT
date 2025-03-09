@@ -1,0 +1,133 @@
+.container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_login_background.png);
+  background-size: cover;
+  padding: 4% 1% 1% 1%;
+
+  .videoTitle {
+    position: absolute;
+    top: 2.3%;
+    left: 11%;
+    // transform: translate(-50%, 2%);
+    color: #013056;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}
+
+.subContainer {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+}
+
+.azureMediaPlayerWrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 10px);
+  padding: 0 12px;
+  padding-top: 12px;
+}
+
+.videoTag {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 66px);
+  padding: 0 12px;
+  padding-top: 12px;
+}
+
+.ButtonNew {
+  background-color: #ffffff;
+
+  border-radius: 15px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: none;
+  // color: #0078d7;
+  color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+.Button2New {
+  margin: 0;
+  background-color: #ffffff;
+  color: #525252;
+  border: 1px solid #adadad;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  height: 35px;
+  font-size: medium;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Button2New:hover {
+  background-color: #0078d4;
+  color: #ffffff;
+}
+.ButtonNew:hover {
+  background-color: #f0f0f0;
+  color: #0078d7;
+}
+.toggleButtonsContainer {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 2%;
+  right: 8%;
+}
+.activeButton {
+  // background-color: #e6f2ff;
+  border: 1px solid #0078d7;
+  height: 35px;
+  color: #0078d4;
+  background-color: #ffffff;
+}
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 1650px) {
+  .videoTitle {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .videoTitle {
+    font-size: 1.2rem !important;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .videoTitle {
+    font-size: 1.1rem !important;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .videoTitle {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 1270px) {
+  .videoTitle {
+    font-size: 0.9rem !important;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .videoTitle {
+    font-size: 0.8rem !important;
+  }
+}

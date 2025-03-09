@@ -1,0 +1,208 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: var(--backgroundImageURL);
+  background-size: cover;
+  padding: 16px;
+  gap: 16px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: auto;
+  background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_login_background.png);
+  background-size: cover;
+  padding: 4% 1% 1% 1%;
+}
+.subContainer {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+  position: relative;
+}
+.title {
+  /* Heading/Heading 4 - Semibold */
+  font-family: var(--family-font, "Segoe UI");
+  font-size: var(--size-h4, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+  letter-spacing: var(--letter-spacing-normal, 0px);
+  // margin: 0 64px;
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  height: max-content;
+  background: var(--kendo-color-app-surface, #fff);
+  border-radius: var(--border-radius-xl, 8px);
+  padding: 8px;
+}
+
+.cardTitle {
+  color: #000;
+  /* Heading/Heading 5 - Semibold */
+  font-family: var(--family-font, "Segoe UI");
+  font-size: var(--size-h5, 18px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 133%; /* 23.94px */
+  letter-spacing: var(--letter-spacing-normal, 0px);
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: unset;
+  gap: 16px;
+}
+
+.verticalLine {
+  width: 1px;
+  //height: 33vh;
+  background-color: var(
+    --kendo-color-component-border,
+    rgba(138, 136, 134, 0.16)
+  );
+}
+
+.mainProduct {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  & > div {
+    &:first-of-type {
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: var(--Large, 6px);
+  }
+}
+
+.data {
+  display: flex;
+  //justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--kendo-color-on-app-surface, #323130);
+  font-size: var(--size-sm, 14px);
+  font-weight: 600;
+  line-height: 133%; /* 15.96px */
+  letter-spacing: var(--letter-spacing-normal, 0px);
+
+  // & > p:first-child {
+  //   // overflow: hidden;
+  //   // text-overflow: ellipsis;
+  // }
+
+  & > p:last-child {
+    width: 27px;
+    color: var(--kendo-color-subtle, #605e5c);
+    font-size: var(--size-sm, 12px);
+    line-height: 133%; /* 15.96px */
+  }
+}
+
+.additionalProducts {
+  margin-top: 19px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex: 1;
+
+  img {
+    border-radius: var(--Large, 6px);
+  }
+
+  .data {
+    font-size: var(--size-sm, 12px);
+    line-height: 133%; /* 15.96px */
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.svgContainer {
+  img {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.svgOtherProductContainer {
+  width: 100px;
+}
+.selectedCard {
+  .cardTitle {
+    color: var(--kendo-color-primary);
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  border-radius: 8px;
+  border: 4px solid var(--kendo-color-primary);
+  background: var(--kendo-color-app-surface, #fff);
+  box-shadow: 0px 16px 19px 0px rgba(0, 0, 0, 0.28),
+    0px 0px 10px 0px rgba(0, 0, 0, 0.24);
+}
+
+@media screen and (min-width: 1600px) {
+  .cardTitle {
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .data {
+    font-size: var(--size-h6, 16px);
+
+    & > p:last-child {
+      font-size: var(--size-sm, 14px);
+    }
+  }
+  .product {
+    .data {
+      font-size: var(--size-h6, 14px);
+    }
+  }
+}
+
+.price {
+  color: var(--kendo-color-primary) !important;
+}

@@ -1,0 +1,133 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/contoso_login_page_background.png);
+  background-size: cover;
+  color: white;
+  // justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 16px;
+  //position: relative;
+}
+.list {
+  display: inline-flex;
+}
+
+.arrowA {
+  position: absolute;
+  top: 10px;
+  transform: scale(0.7);
+  right: 100px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.img {
+  padding-top: 36px;
+  height: 90%;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 12px;
+  height: calc(100% - 96px);
+
+  & > div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    flex: 1;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    padding: 24px;
+  }
+}
+
+.predictBtn {
+  border-radius: 8px;
+  background: #0d77ae;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  height: 40px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover,
+  &:focus,
+  &:active {
+    background: #0d77ae;
+    color: white;
+  }
+}
+
+.generateBtn {
+  border-radius: 8px;
+  background: #4a768c;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  height: 40px;
+  width: 300px;
+  margin-top: 24px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #4a768c;
+    color: white;
+  }
+}
+
+.details {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  padding: 12px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.popupOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99999998;
+}
+
+.popupContainer {
+  position: absolute;
+  z-index: 99999999;
+  border-radius: 16px;
+
+  & > div {
+    background-color: white;
+    color: black;
+    white-space: pre-line;
+    width: 880px;
+    padding: 24px;
+  }
+}
+
+.block {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  top: 13px;
+  right: 13px;
+}

@@ -1,0 +1,274 @@
+.container {
+  background-image: url(https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_login_background.png);
+  background-size: cover;
+  padding: 4% 1% 1% 1%;
+
+  .landingPageImage {
+    padding: 0px;
+    border-radius: 0.5rem;
+  }
+}
+.container,
+.image {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.chatIcon {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  cursor: pointer;
+  z-index: 999;
+  height: 46px;
+}
+
+.subContainer {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+  padding-right: 30px;
+  padding-left: 30px;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.subContainer1 {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 254, 250, 0.2);
+  border-radius: 0.5rem;
+
+  padding: 2rem;
+  display: flex !important;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url("https://dreamdemoassets.blob.core.windows.net/nrf/Landing_Page_BG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 30px;
+}
+
+.image {
+  height: calc(100% - 10px);
+  // padding: 0 55px;
+  // padding-top: 12px;
+}
+.tileWrapper {
+  display: inline-flex;
+}
+.chatBotLandingPageContainer {
+  width: 30%;
+  position: relative;
+  height: 100%;
+}
+// .image {
+//   height: calc(100% - 142px);
+//   padding: 0 12px;
+//   padding-top: 12px;
+// }
+.tileContainer {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  // align-self: flex-end;
+  justify-self: center;
+  // position: absolute;
+  border-radius: 20px;
+  padding: 30px 40px;
+  // background-color: rgba(0, 0, 0, 0.459);
+  box-shadow: 0px 4px 4px 0px #ffffff40;
+  z-index: 999;
+  gap: 10px;
+  border: 1px solid white;
+  flex: 1;
+}
+// .tileContainer {
+//   display: flex;
+//   flex-direction: row;
+//   /* margin-bottom: 80px; */
+//   padding: 30px 40px;
+//   border-radius: 20px;
+//   background-color: rgba(0, 0, 0, 0.4588235294);
+//   box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
+//   max-width: 800px;
+//   z-index: 999;
+//   // position: absolute;
+//   // bottom: 3%;
+//   // left: 42%;
+//   transform: translate(-50%, -10%);
+// }
+.pulsingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(30, 143, 255, 0);
+  color: white;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  position: absolute;
+}
+.dataEngineering {
+  width: 8.2%;
+  height: 15%;
+  top: 13.5%;
+  left: 8.5%;
+}
+.dataFactory {
+  width: 8.2%;
+  height: 15%;
+  top: 13.5%;
+  left: 17%;
+}
+.dataWarehouse {
+  width: 8.2%;
+  height: 15%;
+  top: 13.5%;
+  left: 25.5%;
+}
+.dataScience {
+  width: 8.2%;
+  height: 15%;
+  top: 13.5%;
+  left: 34%;
+}
+.realTimeIntelligenceDataActivator {
+  width: 16.7%;
+  height: 15%;
+  top: 13.5%;
+  left: 42.5%;
+}
+.powerBiExperience {
+  width: 8.1%;
+  height: 15%;
+  top: 13.5%;
+  right: 32.55%;
+}
+.azureDatabricks {
+  width: 20%;
+  height: 30%;
+  top: 10%;
+  right: 10%;
+}
+.purview {
+  width: 6%;
+  height: 82%;
+  top: 10%;
+  right: 3.5%;
+}
+.aiStudio {
+  width: 20%;
+  height: 27%;
+  top: 45%;
+  right: 10%;
+}
+.appCosmosDB {
+  width: 20%;
+  height: 20%;
+  bottom: 6%;
+  right: 10%;
+}
+.eventStream {
+  width: 5%;
+  height: 10%;
+  bottom: 39%;
+  right: 55%;
+}
+.tooltipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the div */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.copilot {
+  width: 65%;
+  height: 41%;
+  top: 10%;
+  left: 3%;
+}
+.pulsingDiv:hover {
+  box-shadow: 0 0 5px 5px rgba(30, 144, 255, 0.6);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px 20px rgba(30, 144, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 40px 40px rgba(30, 144, 255, 0.3);
+  }
+}
+.tileWrapper1 {
+  display: flex;
+  flex-direction: column;
+  // width: 100%;
+  // max-width: 600px; /* Adjust this width as needed */
+  // margin: 0 auto;
+  width: 100%;
+  gap: 30px;
+  align-items: center;
+}
+.tileWrapper2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  align-items: center;
+}
+.tileWrapperEnd {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 20px;
+  padding-bottom: 20px;
+  column-gap: 30px;
+  // width: 100%;
+  // max-width: 600px; /* Adjust this width as needed */
+  // margin: 0 auto;
+  width: 100%;
+  place-items: center;
+}
+
+@media screen and (max-width: 1500px) {
+  .subContainer {
+    padding: 2rem 5px;
+  }
+  .tileContainer {
+    .tileWrapper1 {
+      .container {
+        border: 2px solid red;
+      }
+    }
+  }
+  .chatBotLandingPageContainer {
+    :global(.chatBot) {
+      width: 300px;
+    }
+  }
+}
