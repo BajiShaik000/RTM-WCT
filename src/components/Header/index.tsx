@@ -10,7 +10,7 @@ import { useAppSelector } from "hooks";
 import styles from "./styles.module.scss";
 import { Helmet } from "react-helmet";
 import { Button } from "@progress/kendo-react-buttons";
-import Image from "./logo.jpg";
+import Image from "./MediGuard.avif";
 
 interface Props {
   expanded: boolean;
