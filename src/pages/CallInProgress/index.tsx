@@ -44,6 +44,8 @@ import { PageType } from "types";
 import { AVATARS } from "pages/SetupWizardPersona";
 import React from "react";
 import { ArchitectureIcon } from "assets/ArchitectureIcon";
+import AgentAvatar from "./Agent.jpeg";
+import PatientAvatar from "./Patient.png";
 let {
   CALL_CENTER_API,
   SPEECH_KEY,
@@ -154,8 +156,29 @@ const EMOJIS: any = {
     "https://dreamdemoassets.blob.core.windows.net/daidemo/very_positive_emoji.png",
 };
 
+
+
 export const CallInProgress: FC = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const AUTHORS: User[] = [
+    {
+      id: "user",
+      name: "Mukesh",
+      avatarUrl: PatientAvatar,
+    },
+    {
+      id: "assistant",
+      name: "MediGuard Agent",
+      avatarUrl: AgentAvatar,
+    },
+  ];
+  const initialMessage:Message[] = [
+    {
+      author: AUTHORS[1],
+      text: "Hii, I am Mediguard Assurane Agent. How I can help you ?",
+      timestamp:new Date(),
+    }
+  ]
+  const [messages, setMessages] = useState<Message[]>(initialMessage);
   const [text] = useState("");
   const [issueToken, setIssueToken] = useState("");
   const [isPressed, setIsPressed] = useState(false);
@@ -199,20 +222,6 @@ export const CallInProgress: FC = () => {
   const [showArchPopup, setShowArchPopup] = useState(false);
 
   let popupTitle = " ";
-
-  const AUTHORS: User[] = [
-    {
-      id: "user",
-      name: name,
-      avatarUrl: `https://dreamdemoassets.blob.core.windows.net/mtc/${avatar}_selected_avatar.png`,
-    },
-    {
-      id: "assistant",
-      name: "Agent",
-      avatarUrl:
-        "https://dreamdemoassets.blob.core.windows.net/daidemo/aoai_2_agent.png",
-    },
-  ];
 
   const [buttonGlow, setButtonGlow] = useState({
     isSuggest: true,
@@ -444,7 +453,7 @@ export const CallInProgress: FC = () => {
 
   const onMessageSend = async (e?: ChatMessageSendEvent, text?: string) => {
     const userMessage: Message = {
-      author: AUTHORS[1],
+      author: AUTHORS[0],
       text: text?.trim() ?? e?.message.text?.trim(),
       timestamp: e?.message.timestamp ?? new Date(),
     };
@@ -459,7 +468,7 @@ export const CallInProgress: FC = () => {
     setMessages((old) => [
       ...(old ?? []),
       userMessage,
-      { author: AUTHORS[0], typing: true },
+      { author: AUTHORS[1], typing: true },
     ]);
 
     try {
@@ -483,7 +492,7 @@ export const CallInProgress: FC = () => {
             ...(old ?? []).slice(0, old.length - 2),
             userMessage,
             {
-              author: AUTHORS[0],
+              author: AUTHORS[1],
               // text: data.answer,
               text: secondUser[questionCount],
               timestamp: new Date(),
@@ -624,7 +633,7 @@ export const CallInProgress: FC = () => {
         {props.messageInput}
         {props.sendButton}
 
-        <div
+        {/* <div
           title="Hold to Speak, Please wait for 2-3 seconds while holding down the mic button before you begin to speak."
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
@@ -636,7 +645,7 @@ export const CallInProgress: FC = () => {
           <Mic28Filled
             className={`${styles.mic} ${buttonGlow.isSuggest && styles.glow}`}
           />
-        </div>
+        </div> */}
       </>
     );
   };
@@ -658,7 +667,11 @@ export const CallInProgress: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <h1>MediGuard Assurance Agent</h1>
+        <div className={styles.header}>
+          <img src={AgentAvatar} alt="agent-icon" />
+          <h1>MediGuard Assurance Agent</h1>
+        </div>
+
         <div className={styles.middleContainer}>
           <Chat
             messageTemplate={MessageTemplate}
