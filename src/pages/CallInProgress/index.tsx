@@ -9,6 +9,7 @@ import {
   Mic28Filled,
   Speaker224Filled,
   SpeakerMute24Filled,
+  Delete24Regular,
 } from "@fluentui/react-icons";
 import {
   Chat,
@@ -37,7 +38,11 @@ import {
   Tooltip,
 } from "@progress/kendo-react-tooltip";
 import { AgentIcon, InfoIcon } from "assets";
-import { TextArea, Slider as KendoSlider } from "@progress/kendo-react-inputs";
+import {
+  TextArea,
+  Slider as KendoSlider,
+  Switch,
+} from "@progress/kendo-react-inputs";
 import { ArchitectureWithTags } from "pages/ArchitectureWithTags";
 import { EmailPopupWrapper, Popup } from "components";
 import { PageType } from "types";
@@ -46,6 +51,7 @@ import React from "react";
 import { ArchitectureIcon } from "assets/ArchitectureIcon";
 import AgentAvatar from "./Agent.jpeg";
 import PatientAvatar from "./Patient.png";
+import { Dialog, DialogActionsBar } from "@progress/kendo-react-dialogs";
 let {
   CALL_CENTER_API,
   SPEECH_KEY,
@@ -156,28 +162,26 @@ const EMOJIS: any = {
     "https://dreamdemoassets.blob.core.windows.net/daidemo/very_positive_emoji.png",
 };
 
-
-
 export const CallInProgress: FC = () => {
   const AUTHORS: User[] = [
     {
       id: "user",
-      name: "Mukesh",
+      name: "User",
       avatarUrl: PatientAvatar,
     },
     {
       id: "assistant",
-      name: "MediGuard Agent",
+      // name: "MediGuard Agent",
       avatarUrl: AgentAvatar,
     },
   ];
-  const initialMessage:Message[] = [
+  const initialMessage: Message[] = [
     {
       author: AUTHORS[1],
       text: "Hii, I am Mediguard Assurane Agent. How I can help you ?",
-      timestamp:new Date(),
-    }
-  ]
+      timestamp: new Date(),
+    },
+  ];
   const [messages, setMessages] = useState<Message[]>(initialMessage);
   const [text] = useState("");
   const [issueToken, setIssueToken] = useState("");
@@ -313,6 +317,12 @@ export const CallInProgress: FC = () => {
       </div>
     );
   };
+
+  const suggestedActions: any = [
+    "I'm sorry to hear that you're experiencing this issue, sir. May I have your name and mobile number so I can assist you further?",
+    "Thank you, Mr. Williams. Let me quickly check your number. It appears that you're on our standard domestic plan, which doesn't include international roaming services.",
+    "The International Travel Pack provides unlimited data, calls, and texts while you're abroad. The standard price is $70 for the duration of your trip.",
+  ];
   const [questionCount, setQuestionCount] = useState<any>(0);
   const istUser: any = [
     // "Thank you for calling Contoso Telecom Customer Support. How may I assist you today? ",
@@ -606,24 +616,24 @@ export const CallInProgress: FC = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const element = document.getElementsByClassName(
-      "k-message-list k-avatars"
-    )?.[0];
-    const spanElement = document.createElement("span");
-    spanElement.classList.add(styles.chatEndedMessage);
+  // useEffect(() => {
+  //   const element = document.getElementsByClassName(
+  //     "k-message-list k-avatars"
+  //   )?.[0];
+  //   const spanElement = document.createElement("span");
+  //   spanElement.classList.add(styles.chatEndedMessage);
 
-    const messageBox: any = document.getElementsByClassName(
-      "k-message-box k-textbox k-input k-input-md k-rounded-md k-input-solid"
-    )[0];
+  //   const messageBox: any = document.getElementsByClassName(
+  //     "k-message-box k-textbox k-input k-input-md k-rounded-md k-input-solid"
+  //   )[0];
 
-    if (isEnded && element) {
-      element.classList.add(styles.chatEnded);
-      element.scrollTop = element.scrollHeight;
-      element.appendChild(spanElement);
-      messageBox.classList.add(styles.disabled);
-    }
-  }, [isEnded]);
+  //   if (isEnded && element) {
+  //     element.classList.add(styles.chatEnded);
+  //     element.scrollTop = element.scrollHeight;
+  //     element.appendChild(spanElement);
+  //     messageBox.classList.add(styles.disabled);
+  //   }
+  // }, [isEnded]);
 
   const [showDisclaimer, setShowDisclaimer] = useState(false);
 
@@ -663,25 +673,179 @@ export const CallInProgress: FC = () => {
   const handleCancel = () => {
     setShowEmailPopup(false);
   };
+  const [externalDomain, setExternalDomain] = useState(false);
+  const [ownData, setOwnData] = useState(false);
+  const handleExternalDomain = () => {};
+  const handleOwnData = () => {};
 
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
         <div className={styles.header}>
           <img src={AgentAvatar} alt="agent-icon" />
-          <h1>MediGuard Assurance Agent</h1>
+          <h2>MediGuard Agent</h2>
         </div>
-
         <div className={styles.middleContainer}>
-          <Chat
-            messageTemplate={MessageTemplate}
-            attachmentTemplate={AttachmentTemplate}
-            onMessageSend={onMessageSend}
-            className={styles.chat}
-            user={AUTHORS[0]}
-            messages={messages}
-            messageBox={customMessage}
-          />
+          <div
+            style={
+              messages.length < 2
+                ? { height: "50%", width: "80%" }
+                : { width: "80%", height: "550px" }
+            }
+          >
+            <Chat
+              messageTemplate={MessageTemplate}
+              attachmentTemplate={AttachmentTemplate}
+              onMessageSend={onMessageSend}
+              className={styles.chat}
+              user={AUTHORS[0]}
+              messages={messages}
+              messageBox={customMessage}
+            />
+          </div>
+          <div className={styles.actionBtnContainer}>
+            <div className={styles.toggleBtnContainer}>
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => setExternalDomain((prev) => !prev)}
+              >
+                Pre-trained knowledge{" "}
+                <Switch
+                  onChange={handleExternalDomain}
+                  checked={externalDomain}
+                />
+              </div>
+              <div
+                style={{ cursor: "pointer" }}
+                onClick={() => setOwnData((prev) => !prev)}
+              >
+                Try your own data{" "}
+                <Switch onChange={handleOwnData} checked={ownData} />
+              </div>
+            </div>
+            {ownData && (
+              <Dialog
+                onClose={() => setOwnData(false)}
+                title="Upload Your Data here"
+              >
+                <div
+                  style={{
+                    width: "500px", // Set width
+                    height: "300px", // Set height
+                    padding: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <p>This is a modal for Drag and drop files </p>
+                </div>
+              </Dialog>
+            )}
+            {externalDomain && (
+              <Dialog
+                onClose={() => setExternalDomain(false)}
+                title="Login Form"
+              >
+                <div
+                  style={{
+                    width: "600px",
+                    height: "300px",
+                    padding: "20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10%",
+                  }}
+                >
+                  <div>
+                    <label htmlFor="policyId">Policy ID: </label>
+                    <input
+                      type="text"
+                      name="policyid"
+                      id="policyId"
+                      placeholder="please enter your policy ID here"
+                      required
+                      style={{}}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="DOB">DOB</label>
+                    <input type="date" name="dateofbirth" id="DOB" required />
+                  </div>
+                  <div>
+                    <button
+                      style={{
+                        border: "none",
+                        outline: "none",
+                        padding: "7px 17px",
+                        borderRadius:"10px",
+                        color:"white",
+                        backgroundColor:"blue"
+                      }}
+                    >
+                      Authenticate
+                    </button>
+                  </div>
+                </div>
+              </Dialog>
+            )}
+
+            <div
+              className={styles.clearChat}
+              style={
+                messages.length < 2
+                  ? {
+                      pointerEvents: "none",
+                      cursor: "none",
+                      opacity: "0.4",
+                    }
+                  : {}
+              }
+              onClick={() => setMessages(initialMessage)}
+            >
+              <Delete24Regular />
+              <span>Clear Chat</span>
+            </div>
+          </div>
+          {messages.length < 2 && (
+            <div
+              className={styles.suggestedActionsContainer}
+              style={{ width: "80%" }}
+            >
+              {suggestedActions.map((item: any, index: number) => (
+                <div
+                  key={index}
+                  className={styles.suggestedAction}
+                  onClick={
+                    () => onMessageSend(undefined, item)
+                    // setMessages((prev) => [
+                    //   ...prev,
+                    //   {
+                    //     author: AUTHORS[0],
+                    //     text: item,
+                    //     timestamp: new Date(),
+                    //   },
+                    // ])
+                  }
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          )}
+          <p
+            style={
+              messages.length < 2
+                ? { color: "#323130", width: "80%", marginTop: "10px" }
+                : {
+                    color: "#323130",
+                    width: "80%",
+                    marginLeft: "40px",
+                  }
+            }
+          >
+            **AI generated content may be incomplete or factually incorrect.
+          </p>
         </div>
       </div>
     </div>

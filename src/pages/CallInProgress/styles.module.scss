@@ -24,15 +24,12 @@
   height: 100%;
   background: rgba(255, 254, 250, 0.2);
   border-radius: 0.5rem;
-  padding: 1% 3%;
-  gap: 32px;
+  padding: 1%;
+  gap: 10px;
   // padding-top: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  h1{
-    color: #0593D8;
-  }
 }
 
 .leftContainer {
@@ -105,7 +102,6 @@
   height: 90%;
 }
 
-
 .middleContainer {
   // border: 1px solid red;
   //flex: 0.25;
@@ -115,7 +111,6 @@
   color: white;
   position: relative;
 }
-
 
 .submitPopover {
   top: unset !important;
@@ -408,6 +403,57 @@
   font-weight: 600;
 }
 
+.actionBtnContainer{
+  width: 80%;
+  margin: 0 10%;
+  margin-bottom: 2%;
+  display: flex;
+  padding: 0 2%;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  flex-direction: row;
+  color: #323130;
+  .toggleBtnContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .clearChat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+
+.suggestedActionsContainer {
+  width: 80%;
+  margin: 0 10%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  .suggestedAction {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2%;
+    color: #605e5c;
+    transition: all 0.3s;
+    border-bottom: 5px solid transparent;
+
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+      border-bottom: 5px solid #0593D8;
+    }
+  }
+}
+
 .chat {
   margin: 0;
   // width: 760px;
@@ -451,7 +497,7 @@
   :global(.k-message-box) {
     input {
       font-size: 16px;
-      padding: 18px 22px;
+      padding: 10px 17px;
     }
   }
 
@@ -494,15 +540,21 @@
   }
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
-  flex-direction: row;
-  img{
+  justify-content: center;
+  flex-direction: column;
+  img {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 24px;
+    color: #0593d8;
+    margin-bottom: 10px !important;
   }
 }
 
