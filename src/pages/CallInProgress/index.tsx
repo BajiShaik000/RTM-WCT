@@ -9,8 +9,7 @@ import {
 } from "@progress/kendo-react-conversational-ui";
 import { FC, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
-import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "hooks";
+import { useAppSelector } from "hooks";
 import { Switch } from "@progress/kendo-react-inputs";
 import AgentAvatar from "./Agent.jpeg";
 import PatientAvatar from "./Patient.png";
@@ -23,18 +22,21 @@ export const CallInProgress: FC = () => {
   );
   console.log(isLoggedIn, policyInfo, patientName);
 
-  const AUTHORS: User[] = [
-    {
-      id: "user",
-      name: patientName,
-      avatarUrl: PatientAvatar,
-    },
-    {
-      id: "assistant",
-      // name: "MediGuard Agent",
-      avatarUrl: AgentAvatar,
-    },
-  ];
+  const AUTHORS: User[] = useMemo(
+    () => [
+      {
+        id: "user",
+        name: patientName,
+        avatarUrl: PatientAvatar,
+      },
+      {
+        id: "assistant",
+        // name: "MediGuard Agent",
+        avatarUrl: AgentAvatar,
+      },
+    ],
+    [patientName]
+  );
 
   const initialMessage: Message[] = useMemo(
     () => [
@@ -44,7 +46,7 @@ export const CallInProgress: FC = () => {
         timestamp: new Date(),
       },
     ],
-    [patientName]
+    [AUTHORS, patientName]
   );
 
   const [messages, setMessages] = useState<Message[]>(initialMessage);
@@ -52,10 +54,6 @@ export const CallInProgress: FC = () => {
   useEffect(() => {
     setMessages(initialMessage);
   }, [initialMessage]);
-
-  const dispatch = useAppDispatch();
-
-  const navigate = useNavigate();
 
   const MessageTemplate = (props: any) => {
     return (

@@ -8,6 +8,8 @@ import {
   setIsLoggedIn as setReduxIsLoggedIn,
   setPatientName,
 } from "store";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const patientDetails = [
   {
@@ -144,13 +146,21 @@ export const KnowYourPolicy: FC = () => {
       e.preventDefault();
       e.stopPropagation();
       if (validateForm()) {
-        setIsLoggedIn(true);
+        toast.success("Login Successful!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "light",
+        });
         setShowLogIn(false);
+        setIsLoggedIn(true);
         setPolicyId("");
         setDob("");
         setPolicyError("");
         setDobError("");
-        alert("Login Successful");
       }
     },
     [validateForm]
@@ -177,19 +187,10 @@ export const KnowYourPolicy: FC = () => {
 
   return (
     <>
+      <ToastContainer />
       <div style={{ cursor: "pointer" }} onClick={handleToggle}>
-        {!isLoggedIn && (
-          <>
-            Know your Policy{" "}
-            <Switch onChange={handleToggle} checked={isLoggedIn} />
-          </>
-        )}
-        {isLoggedIn && (
-          <>
-            Switch to General Details{" "}
-            <Switch onChange={handleToggle} checked={isLoggedIn} />
-          </>
-        )}
+        {!isLoggedIn ? "Know your Policy " : "Switch to General Details "}
+        <Switch onChange={handleToggle} checked={isLoggedIn} />
       </div>
       {showLogIn && (
         <Dialog onClose={() => handleCloseLogin()} title="Login Form">
