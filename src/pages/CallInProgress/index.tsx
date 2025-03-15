@@ -15,6 +15,7 @@ import AgentAvatar from "./Agent.jpeg";
 import PatientAvatar from "./Patient.png";
 import { Dialog } from "@progress/kendo-react-dialogs";
 import { KnowYourPolicy } from "./KnowYourPolicy";
+import { DragDropFile } from "./DragDropFile";
 
 export const CallInProgress: FC = () => {
   const { isLoggedIn, policyInfo, patientName } = useAppSelector(
@@ -42,7 +43,9 @@ export const CallInProgress: FC = () => {
     () => [
       {
         author: AUTHORS[1],
-        text: `Hi ${patientName}, I am Mediguard Assurance Agent. How can I help you?`,
+        text: `Hi${
+          patientName === "Guest" ? "" : ` ${patientName}`
+        }, I am Mediguard Assurance Agent. How can I help you?`,
         timestamp: new Date(),
       },
     ],
@@ -165,10 +168,6 @@ export const CallInProgress: FC = () => {
     );
   };
 
-  const [ownData, setOwnData] = useState(false);
-
-  const handleOwnData = () => {};
-
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
@@ -197,33 +196,8 @@ export const CallInProgress: FC = () => {
           <div className={styles.actionBtnContainer}>
             <div className={styles.toggleBtnContainer}>
               <KnowYourPolicy />
-              <div
-                style={{ cursor: "pointer" }}
-                onClick={() => setOwnData((prev) => !prev)}
-              >
-                Try your own data{" "}
-                <Switch onChange={handleOwnData} checked={ownData} />
-              </div>
+              <DragDropFile />
             </div>
-            {ownData && (
-              <Dialog
-                onClose={() => setOwnData(false)}
-                title="Upload Your Data here"
-              >
-                <div
-                  style={{
-                    width: "500px",
-                    height: "300px",
-                    padding: "20px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <p>This is a modal for Drag and drop files </p>
-                </div>
-              </Dialog>
-            )}
             <div
               className={styles.clearChat}
               style={
