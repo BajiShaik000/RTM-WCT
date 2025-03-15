@@ -48,6 +48,9 @@ interface ConfigState {
   solutionPlay: string;
   defaultLandingPage: boolean;
   childNodes: any;
+  policyInfo: any;
+  isLoggedIn: boolean;
+  patientName: string;
 }
 
 // Define the initial state using that type
@@ -93,6 +96,9 @@ const initialState: ConfigState = {
   solutionPlay: "",
   defaultLandingPage: false,
   childNodes: "",
+  policyInfo: {},
+  isLoggedIn: false,
+  patientName: "Guest",
 };
 
 export const configSlice = createSlice({
@@ -103,6 +109,15 @@ export const configSlice = createSlice({
     // Use the PayloadAction type to declare the contents of `action.payload`
     setPageTitle: (state, action: PayloadAction<string>) => {
       state.pageTitle = action.payload;
+    },
+    setPolicyInfo: (state, action) => {
+      state.policyInfo = action.payload;
+    },
+    setIsLoggedIn: (state, action) => {
+      state.isLoggedIn = action.payload;
+    },
+    setPatientName: (state, action) => {
+      state.patientName = action.payload;
     },
     setPageType: (state, action: PayloadAction<PageType>) => {
       state.pageType = action.payload;
@@ -259,6 +274,9 @@ export const {
   setSolutionPlay,
   setDefaultLandingPage,
   setChildNodes,
+  setIsLoggedIn,
+  setPolicyInfo,
+  setPatientName,
 } = configSlice.actions;
 
 export default configSlice.reducer;

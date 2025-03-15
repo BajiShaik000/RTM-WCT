@@ -75,6 +75,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
           </AppBarSection>
         )} */}
         <AppBarSection>
+          <h6 style={{}}>WCT</h6>
           <NavLink
             to="/logout"
             className="k-button k-button-md k-rounded-md k-button-flat k-button-flat-base"

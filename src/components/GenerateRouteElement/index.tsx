@@ -14,7 +14,6 @@ import { ImageSlideShow } from "components/ImageSlideShow";
 import { SettingsContext } from "context";
 import { useAppDispatch } from "hooks";
 import {
-  CallCenterEditable,
   CallInProgress,
   ChatBot,
   ChatBot2,
@@ -292,16 +291,6 @@ export const GenerateRouteElement: FC<Props> = ({ data }) => {
       return <IncomingCall />;
     case "call in progress":
       return <CallInProgress />;
-    case "call transcript analysis":
-      return (
-        <CallCenterEditable
-          showBeforeScript={false}
-          showCallCenterBefore={false}
-          showAfterSummary={false}
-          showCallCenterAfter={false}
-          showCustomerConversation={false}
-        />
-      );
     case "customer review":
       return (
         <CustomerReview liveHosted={data?.componentParameters?.liveHosted} />
@@ -354,72 +343,6 @@ export const GenerateRouteElement: FC<Props> = ({ data }) => {
           pageType={data.name}
           pageTitle="Azure Kubernetes Highlights"
           count={16}
-        />
-      );
-
-    case "call center":
-      return (
-        <CallCenterEditable
-          showBeforeScript={false}
-          showCallCenterBefore={false}
-          showAfterSummary={false}
-          showCallCenterAfter={false}
-          showCustomerConversation={false}
-        />
-      );
-
-    case "call center - after script":
-      return (
-        <CallCenterEditable
-          showBeforeScript={false}
-          showCallCenterBefore={false}
-          showAfterSummary={false}
-          showCallCenterAfter={true}
-          showCustomerConversation={false}
-        />
-      );
-
-    case "call center - after summary":
-      return (
-        <CallCenterEditable
-          showBeforeScript={false}
-          showCallCenterBefore={false}
-          showAfterSummary={true}
-          showCallCenterAfter={true}
-          showCustomerConversation={false}
-        />
-      );
-
-    case "call center - before summary":
-      return (
-        <CallCenterEditable
-          showBeforeScript={false}
-          showCallCenterBefore={true}
-          showAfterSummary={false}
-          showCallCenterAfter={false}
-          showCustomerConversation={false}
-        />
-      );
-
-    case "call center - before script":
-      return (
-        <CallCenterEditable
-          showBeforeScript={true}
-          showCallCenterBefore={true}
-          showAfterSummary={false}
-          showCallCenterAfter={false}
-          showCustomerConversation={false}
-        />
-      );
-
-    case "customer conversation":
-      return (
-        <CallCenterEditable
-          showBeforeScript={false}
-          showCallCenterAfter={false}
-          showCallCenterBefore={false}
-          showAfterSummary={false}
-          showCustomerConversation={true}
         />
       );
     case "architecture with tags":

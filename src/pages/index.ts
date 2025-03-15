@@ -7,7 +7,6 @@ export * from "./Home";
 export * from "./CityView";
 export * from "./OrgChart";
 export * from "./CallCenter";
-export * from "./CallCenterEditable";
 export * from "./ChatBot";
 export * from "./SocialMediaCampaign";
 export * from "./ShoppingCopilot";
