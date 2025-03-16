@@ -147,7 +147,13 @@ export const DragDropFile: FC = () => {
                     Preview
                   </span>
                   {preview && (
-                    <Dialog onClose={() => setPreview(false)} title={file.name}>
+                    <Dialog
+                      onClose={() => {
+                        setPreview(false);
+                        setOwnData((prev) => prev);
+                      }}
+                      title={file.name}
+                    >
                       <div
                         key={index}
                         style={{
