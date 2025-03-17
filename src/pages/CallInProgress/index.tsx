@@ -123,8 +123,8 @@ export const CallInProgress: FC = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            user_input: 1,
-            policy_id: "1154452254",
+            user_input: isLoggedIn ? 2 : 1,
+            policy_id: isLoggedIn ? policyInfo.policyId : "",
             query: text?.trim() ?? e?.message.text?.trim(),
           }),
         }
