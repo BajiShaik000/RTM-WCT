@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 import { Helmet } from "react-helmet";
 import { Button } from "@progress/kendo-react-buttons";
 import Image from "./MediGuard.avif";
-import WCT from "./WCT.jpg";
+import WCT from "./WCT.png";
 
 interface Props {
   expanded: boolean;
