@@ -11,6 +11,7 @@ import styles from "./styles.module.scss";
 import { Helmet } from "react-helmet";
 import { Button } from "@progress/kendo-react-buttons";
 import Image from "./MediGuard.avif";
+import WCT from "./WCT.jpg";
 
 interface Props {
   expanded: boolean;
@@ -75,7 +76,16 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
           </AppBarSection>
         )} */}
         <AppBarSection>
-          <h6 style={{}}>WCT</h6>
+          <NavLink to="https://waferwire.com/" target="_blank">
+            <img
+              src={WCT}
+              alt="WCT"
+              style={{
+                padding: "3px",
+                paddingBottom: "5px",
+              }}
+            />
+          </NavLink>
           <NavLink
             to="/logout"
             className="k-button k-button-md k-rounded-md k-button-flat k-button-flat-base"
