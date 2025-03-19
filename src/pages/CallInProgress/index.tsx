@@ -173,7 +173,17 @@ export const CallInProgress: FC = () => {
       <div className={styles.subContainer}>
         <div
           className={styles.header}
-          style={messages.length < 2 ? {} : { position:"absolute", top: "1%",left:"7%", flexDirection:"row",gap:"5px" }}
+          style={
+            messages.length < 2
+              ? {}
+              : {
+                  position: "absolute",
+                  top: "1%",
+                  left: "7%",
+                  flexDirection: "row",
+                  gap: "5px",
+                }
+          }
         >
           <img src={AgentAvatar} alt="agent-icon" />
           <h2>MediGuard Agent</h2>
