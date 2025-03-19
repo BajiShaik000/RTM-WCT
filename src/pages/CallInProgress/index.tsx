@@ -171,7 +171,10 @@ export const CallInProgress: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <div className={styles.header}>
+        <div
+          className={styles.header}
+          style={messages.length < 2 ? {} : { flexDirection: "row",gap:"10px" }}
+        >
           <img src={AgentAvatar} alt="agent-icon" />
           <h2>MediGuard Agent</h2>
         </div>
@@ -180,7 +183,7 @@ export const CallInProgress: FC = () => {
             style={
               messages.length < 2
                 ? { height: "50%", width: "80%" }
-                : { width: "80%", height: "550px" }
+                : { width: "100%", height: "600px" }
             }
           >
             <Chat
@@ -193,7 +196,7 @@ export const CallInProgress: FC = () => {
               messageBox={customMessage}
             />
           </div>
-          <div className={styles.actionBtnContainer}>
+          <div className={styles.actionBtnContainer} style={messages.length < 2 ? {} :{width:"99%"}}>
             <div className={styles.toggleBtnContainer}>
               <KnowYourPolicy />
               {isLoggedIn && <DragDropFile />}
@@ -236,8 +239,7 @@ export const CallInProgress: FC = () => {
                 ? { color: "#323130", width: "80%", marginTop: "10px" }
                 : {
                     color: "#323130",
-                    width: "80%",
-                    marginLeft: "40px",
+                    width: "99%",
                   }
             }
           >
