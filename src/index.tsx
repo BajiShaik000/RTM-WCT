@@ -37,15 +37,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <HashRouter>
     <Provider store={store}>
-      <MsalProvider instance={pca}>
-        <SettingsContextProvider>
-          <DemoContextProvider>
-            <AuthContextProvider>
-              <App />
-            </AuthContextProvider>
-          </DemoContextProvider>
-        </SettingsContextProvider>
-      </MsalProvider>
+      <SettingsContextProvider>
+        <DemoContextProvider>
+            <App />
+        </DemoContextProvider>
+      </SettingsContextProvider>
     </Provider>
   </HashRouter>
 );

@@ -1,6 +1,12 @@
 import { AuthContext, arrayToObject } from "context";
 import { useContext, useEffect } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { DemoMenu } from "types";
 import {
   GenerateRouteElement,
@@ -64,7 +70,7 @@ const getFormattedDemoMenus = (demoMenus: any) =>
 
 function App() {
   const { trackDemoLoad, trackNavigation } = useContext(AuthContext);
-  const isAuthenticated = useIsAuthenticated();
+  const isAuthenticated = true;
   const { tooltips } = useArrows();
   const location = useLocation();
   const dispatch = useAppDispatch();
@@ -88,7 +94,7 @@ function App() {
   useEffect(() => {
     document.body.style.setProperty(
       "--primary-color",
-      `${primaryColor ?? "rgba(0,0,0,.2)"}` 
+      `${primaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--secondary-color",
@@ -182,7 +188,7 @@ function App() {
     );
 
   return (
-    <MsalAuthenticationTemplate interactionType={InteractionType.Redirect}>
+    <>
       <Routes>
         {/* <Route path="settings" element={<Settings />} /> */}
         <Route path="logout" element={<Logout />} />
@@ -203,7 +209,7 @@ function App() {
         <Route path="*" element={<Navigate to={`/landing-page`} />} />
       </Routes>
       <RotateBanner />
-    </MsalAuthenticationTemplate>
+    </>
   );
 }
 
