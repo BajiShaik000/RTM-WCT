@@ -88,39 +88,39 @@ function App() {
   useEffect(() => {
     document.body.style.setProperty(
       "--primary-color",
-      `${primaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${primaryColor ?? "rgba(0,0,0,.2)"}` 
     );
     document.body.style.setProperty(
       "--secondary-color",
-      `${secondaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${secondaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--tab-text-color",
-      `${tabTextColor ?? "rgba(255, 255, 255, 1)"}` ?? ""
+      `${tabTextColor ?? "rgba(255, 255, 255, 1)"}`
     );
     document.body.style.setProperty(
       "--navBar-primary-color",
-      `${navBarPrimaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${navBarPrimaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--navBar-secondary-color",
-      `${navBarSecondaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${navBarSecondaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--tab-primary-color",
-      `${tabPrimaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${tabPrimaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--tab-secondary-color",
-      `${tabSecondaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${tabSecondaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--dropdown-primary-color",
-      `${dropdownPrimaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${dropdownPrimaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--dropdown-secondary-color",
-      `${dropdownSecondaryColor ?? "rgba(0,0,0,.2)"}` ?? ""
+      `${dropdownSecondaryColor ?? "rgba(0,0,0,.2)"}`
     );
     document.body.style.setProperty(
       "--tab-text-color",

@@ -14,7 +14,7 @@ import styles from "./UploadPanel.module.scss";
 import { useEffect, useState } from "react";
 import { Button } from "@progress/kendo-react-buttons";
 import { Popup } from "components";
-import { PDFViewer } from "@progress/kendo-react-pdf-viewer";
+// import { PDFViewer } from '@progress/kendo-react-pdf-viewer';
 import { SettingsContext } from "context";
 import { v4 as uuidv4 } from "uuid";
 import { PDFIcon } from "assets";
@@ -130,10 +130,11 @@ export const UploadPanel = (props: any) => {
         onClose={() => setIsVisible(false)}
         className={styles.popup}
       >
-        <PDFViewer
+        {/* <PDFViewer
           style={{ width: "100%", height: "100%" }}
           arrayBuffer={string}
-        />
+        /> */}
+        <div></div>
       </Popup>
       {!props.hideExternalDropZone && !showResetBtn && (
         <ExternalDropZone
