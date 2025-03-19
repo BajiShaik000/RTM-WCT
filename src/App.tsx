@@ -195,13 +195,7 @@ function App() {
         {/* <Route path="" element={<Home />} /> */}
         <Route path="login" element={<Login />} />
 
-        <Route
-          element={
-            <RequireAuth>
-              <Layout />
-            </RequireAuth>
-          }
-        >
+        <Route element={<Layout />}>
           <Route path="org-chart-2" element={<OrgChart />} />
 
           {routes}

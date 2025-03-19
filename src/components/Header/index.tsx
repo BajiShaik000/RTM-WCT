@@ -36,7 +36,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
   return (
     <>
       <Helmet>
-        <title>MediGuard Assurance-{pageTitle}</title>
+        <title>MediGuard Assurance</title>
       </Helmet>
       <AppBar className={styles.appBar} style={{}}>
         <AppBarSection>
