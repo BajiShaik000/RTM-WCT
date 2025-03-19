@@ -252,7 +252,7 @@ export const Arrow: React.FC<ArrowProps> = ({
           </div>
         </>
       )}
-      {!window.location.href.includes("/landing-page") && (
+      {/* {!window.location.href.includes("/landing-page") && (
         <div
           className="homeButtonsContainer"
           onClick={handleNavigate}
@@ -261,7 +261,7 @@ export const Arrow: React.FC<ArrowProps> = ({
         >
           <HomeNewIconV2 />
         </div>
-      )}
+      )} */}
       {!window.location.href.includes("/dream-demo-architecture") && (
         <div className="arcButtonsContainer">
           <div
