@@ -86,7 +86,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
               }}
             />
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/logout"
             className="k-button k-button-md k-rounded-md k-button-flat k-button-flat-base"
           >
@@ -95,7 +95,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
               src={`${BlobBaseUrl}header_icon_logout.png`}
               alt="header_icon_logout"
             /> */}
-          </NavLink>
+          {/* </NavLink>  */}
         </AppBarSection>
       </AppBar>
     </>
