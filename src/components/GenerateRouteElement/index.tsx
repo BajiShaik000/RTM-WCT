@@ -38,6 +38,7 @@ import { ReImaginedNewWebsite } from "pages/ReImaginedNewWebsite";
 import { ReImaginedNewWebsiteScope } from "pages/ReImaginedNewWebsiteScope";
 import { SetupWizardPersona } from "pages/SetupWizardPersona";
 import { ShoppingCopilotMTC } from "pages/ShoppingCopilotMTC";
+import { ThankYou } from "pages/ThankYou";
 import React, { FC, useContext, useEffect } from "react";
 import { setPersona, setTimeline } from "store";
 import { PageType } from "types";
@@ -291,6 +292,8 @@ export const GenerateRouteElement: FC<Props> = ({ data }) => {
       return <IncomingCall />;
     case "call in progress":
       return <CallInProgress />;
+    case "thank you":
+      return <ThankYou/>;
     case "customer review":
       return (
         <CustomerReview liveHosted={data?.componentParameters?.liveHosted} />

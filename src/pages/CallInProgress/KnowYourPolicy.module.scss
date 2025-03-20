@@ -1,6 +1,6 @@
 .loginContainer {
   width: 600px;
-  height: 320px;
+  height: 350px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -13,12 +13,6 @@
       font-weight: bold;
       margin-left: 5px;
     }
-    .fieldError {
-      color: red;
-      font-size: 12px;
-      margin-top: 2px;
-      margin-left: 5px;
-    }
     .input {
       width: 100%;
       padding: 10px;
@@ -27,6 +21,12 @@
       outline: none;
       margin-bottom: 5px;
     }
+  }
+  .fieldError {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+    margin-left: 5px;
   }
   .submitBtn {
     border: none;

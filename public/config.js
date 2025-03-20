@@ -73,13 +73,13 @@ window.config = {
       id: 142,
       url: "/contact-center-before",
       // title: "Contact Center - Before",
-      name: "Contact Center - Before",
-      toolTip: "Contact Center - Before",
+      name: "Finale",
+      toolTip: "finale",
       icon: "https://dreamdemoassets.blob.core.windows.net/nrf/left-nav-icons/dashboard_icon.png",
       arrowIcon: null,
       order: 4,
       componentId: 2,
-      componentName: "power bi report",
+      componentName: "thank you",
       componentParameters: [
         {
           id: 301,

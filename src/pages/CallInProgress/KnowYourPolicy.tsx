@@ -92,53 +92,72 @@ export const KnowYourPolicy: FC = () => {
   const [policyId, setPolicyId] = useState("");
   const [dob, setDob] = useState("");
 
-  const [policyError, setPolicyError] = useState<string>("");
-  const [dobError, setDobError] = useState("");
+  const [error, setError] = useState<string>("");
 
   const validateForm = useCallback(() => {
-    let isValid = true;
-    let policyErrorMsg = "";
-    let dobErrorMsg = "";
+    const authenticate = async () => {
+      const reponse = await fetch(
+        "https://func-hlsbot-v1.azurewebsites.net/api/sql-auth?",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            policy_id:policyId,
+            dob:dob
+          }),
+        }
+      );
+      const data = await reponse.json();
+      console.log(data);
+    };
+    authenticate();
     const policyDetails = patientDetails.find(
       (patient) => patient.policyId === policyId
     );
 
+    // Validate Policy ID
     if (!policyId.trim()) {
-      policyErrorMsg = "Policy ID is required";
-      isValid = false;
-    } else if (!/^\d{5,10}$/.test(policyId)) {
-      policyErrorMsg = "Policy ID must be 5-10 digits";
-      isValid = false;
-    } else if (policyDetails === undefined) {
-      policyErrorMsg = "Policy ID not found";
-      isValid = false;
+      setError("Policy ID is required");
+      return false;
+    }
+    if (!/^\d{5,10}$/.test(policyId)) {
+      setError("Policy ID must be 5-10 digits");
+      return false;
+    }
+    if (policyDetails === undefined) {
+      setError("Policy ID not found");
+      return false;
     }
 
+    // Validate Date of Birth
     const dobDate = new Date(dob);
     const today = new Date();
 
     if (isNaN(dobDate.getTime())) {
-      dobErrorMsg = "Invalid date format";
-      isValid = false;
-    } else if (dobDate > today) {
-      dobErrorMsg = "Date of Birth cannot be in the future";
-      isValid = false;
-    } else if (
+      setError("Invalid date format");
+      return false;
+    }
+    if (dobDate > today) {
+      setError("Date of Birth cannot be in the future");
+      return false;
+    }
+    if (
       policyDetails?.dob &&
       new Date(policyDetails.dob).toISOString().split("T")[0] !== dob
     ) {
-      dobErrorMsg = "Incorrect Date of Birth";
-      isValid = false;
+      setError("Incorrect Date of Birth");
+      return false;
     }
-    setPolicyError(policyErrorMsg);
-    setDobError(dobErrorMsg);
-    console.log(dobErrorMsg, policyErrorMsg);
-    if (isValid) {
-      dispatch(setReduxIsLoggedIn(true));
-      dispatch(setReduxPolicyInfo(policyDetails));
-      dispatch(setPatientName(policyDetails?.name));
-    }
-    return isValid;
+
+    // If all validations pass
+    setError(""); // Clear any previous errors
+    dispatch(setReduxIsLoggedIn(true));
+    dispatch(setReduxPolicyInfo(policyDetails));
+    dispatch(setPatientName(policyDetails?.name));
+
+    return true;
   }, [dispatch, dob, policyId]);
 
   const handleLogin = useCallback(
@@ -159,8 +178,7 @@ export const KnowYourPolicy: FC = () => {
         setIsLoggedIn(true);
         setPolicyId("");
         setDob("");
-        setPolicyError("");
-        setDobError("");
+        setError("");
       }
     },
     [validateForm]
@@ -181,8 +199,7 @@ export const KnowYourPolicy: FC = () => {
     setShowLogIn(false);
     setPolicyId("");
     setDob("");
-    setPolicyError("");
-    setDobError("");
+    setError("");
   };
 
   return (
@@ -210,9 +227,6 @@ export const KnowYourPolicy: FC = () => {
                   autoFocus
                   className={styles.input}
                 />
-                {policyError && (
-                  <p className={styles.fieldError}>{policyError}</p>
-                )}
               </div>
               <div className={styles.fieldContainer}>
                 <label htmlFor="DOB" className={styles.label}>
@@ -226,8 +240,8 @@ export const KnowYourPolicy: FC = () => {
                   onChange={(e) => setDob(e.target.value)}
                   className={styles.input}
                 />
-                {dobError && <p className={styles.fieldError}>{dobError}</p>}
               </div>
+              {error && <p className={styles.fieldError}>{error}</p>}
               <div>
                 <button type="submit" className={styles.submitBtn}>
                   Authenticate

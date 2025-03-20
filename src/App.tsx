@@ -191,9 +191,9 @@ function App() {
     <>
       <Routes>
         {/* <Route path="settings" element={<Settings />} /> */}
-        <Route path="logout" element={<Logout />} />
+        {/* <Route path="logout" element={<Logout />} /> */}
         {/* <Route path="" element={<Home />} /> */}
-        <Route path="login" element={<Login />} />
+        {/* <Route path="login" element={<Login />} /> */}
 
         <Route element={<Layout />}>
           <Route path="org-chart-2" element={<OrgChart />} />
