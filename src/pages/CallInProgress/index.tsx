@@ -116,7 +116,7 @@ export const CallInProgress: FC = () => {
 
     try {
       const response = await fetch(
-        "https://func-chatbotai.azurewebsites.net/api/func-http?",
+        "https://func-hlsbot-v1.azurewebsites.net/api/func-http-policy?",
         {
           method: "POST",
           headers: {
