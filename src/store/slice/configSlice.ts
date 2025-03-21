@@ -51,6 +51,7 @@ interface ConfigState {
   policyInfo: any;
   isLoggedIn: boolean;
   patientName: string;
+  chatHistory:Array<any>;
 }
 
 // Define the initial state using that type
@@ -99,6 +100,7 @@ const initialState: ConfigState = {
   policyInfo: {},
   isLoggedIn: false,
   patientName: "Guest",
+  chatHistory:[],
 };
 
 export const configSlice = createSlice({
@@ -233,11 +235,15 @@ export const configSlice = createSlice({
     setChildNodes: (state, action) => {
       state.childNodes = action.payload;
     },
+    setChatHistory: (state,action) => {
+      state.chatHistory = action.payload;
+    }
   },
 });
 
 export const {
   setPageType,
+  setChatHistory,
   setPageTitle,
   setPersona,
   setTimeline,

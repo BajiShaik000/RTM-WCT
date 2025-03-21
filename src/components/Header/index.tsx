@@ -83,6 +83,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
               style={{
                 padding: "3px",
                 paddingBottom: "5px",
+                marginRight:"20px"
               }}
             />
           </NavLink>

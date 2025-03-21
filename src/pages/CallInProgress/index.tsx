@@ -9,54 +9,50 @@ import {
 } from "@progress/kendo-react-conversational-ui";
 import { FC, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
-import { useAppSelector } from "hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 import { Switch } from "@progress/kendo-react-inputs";
 import AgentAvatar from "./Agent.jpeg";
 import PatientAvatar from "./Patient.png";
 import { Dialog } from "@progress/kendo-react-dialogs";
 import { KnowYourPolicy } from "./KnowYourPolicy";
 import { DragDropFile } from "./DragDropFile";
+import { setChatHistory } from "store";
 
 export const CallInProgress: FC = () => {
-  const { isLoggedIn, policyInfo, patientName } = useAppSelector(
+  const { isLoggedIn, policyInfo, patientName, chatHistory } = useAppSelector(
     (state) => state.config
   );
   console.log(isLoggedIn, policyInfo, patientName);
+  const dispatch = useAppDispatch();
 
-  const AUTHORS: User[] = useMemo(
-    () => [
-      {
-        id: "user",
-        name: patientName,
-        avatarUrl: PatientAvatar,
-      },
-      {
-        id: "assistant",
-        // name: "MediGuard Agent",
-        avatarUrl: AgentAvatar,
-      },
-    ],
-    [patientName]
-  );
+  const AUTHORS: User[] = [
+    {
+      id: "user",
+      name: patientName,
+      avatarUrl: PatientAvatar,
+    },
+    {
+      id: "assistant",
+      // name: "MediGuard Agent",
+      avatarUrl: AgentAvatar,
+    },
+  ];
 
-  const initialMessage: Message[] = useMemo(
-    () => [
-      {
-        author: AUTHORS[1],
-        text: `Hi${
-          patientName === "Guest" ? "" : ` ${patientName}`
-        }, I am Mediguard Assurance Agent. How can I help you?`,
-        timestamp: new Date(),
-      },
-    ],
-    [AUTHORS, patientName]
-  );
+  const initialMessage: Message[] = [
+    {
+      author: AUTHORS[1],
+      text: `Hi${
+        patientName === "Guest" ? "" : ` ${patientName}`
+      }, I am Mediguard Assurance Agent. How can I help you?`,
+      timestamp: new Date(),
+    },
+  ];
 
   const [messages, setMessages] = useState<Message[]>(initialMessage);
 
-  useEffect(() => {
-    setMessages(initialMessage);
-  }, [initialMessage]);
+  // useEffect(() => {
+  //   setMessages(initialMessage);
+  // }, [initialMessage]);
 
   const MessageTemplate = (props: any) => {
     return (
@@ -85,16 +81,16 @@ export const CallInProgress: FC = () => {
   };
 
   const generalSuggestedActions: any = [
-    "What will cover in medical expenses ?",
-    "What are post-hospital medical expenses ?",
-    "What are exclusions in General Policy ?",
-    "What is waiting period for PED's ?",
+    "What does health insurance policy cover?",
+    "Does policy cover inpatient hospitalization?",
+    "How do I file a claim for reimbursement?",
+    "How can I get cashless treatment at a hospital?",
   ];
   const personalSuggstedActions: any = [
-    "What is my claim limit ?",
-    "List my excluded illnesses ",
-    "List my covered illnesses ",
-    "What is my Claim Validity ?",
+    "What is the effective period of my policy?",
+    "What are my major covered illnesses?",
+    "What are my excluded illnesses?",
+    "Know about your claim status",
   ];
 
   const suggestedActions = isLoggedIn
@@ -114,48 +110,60 @@ export const CallInProgress: FC = () => {
       { author: AUTHORS[1], typing: true },
     ]);
 
-    try {
-      const response = await fetch(
-        "https://func-hlsbot-v1.azurewebsites.net/api/func-http-policy?",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            user_input: isLoggedIn ? 2 : 1,
-            policy_id: isLoggedIn ? policyInfo.policyId : "",
-            query: text?.trim() ?? e?.message.text?.trim(),
-          }),
-        }
-      );
-      const data = await response.text();
-
-      if (data) {
+    if (userMessage.text === "Know about your claim status") {
+      setTimeout(() => {
         setMessages((old) => {
           const finalMessages = [
             ...(old ?? []).slice(0, old.length - 2),
             userMessage,
             {
               author: AUTHORS[1],
-              text: data,
+              text: `**Claim Amount:** $${policyInfo[`claim_amount($)`]}
+               **Claim Status:** ${policyInfo.claim_status}`,
               timestamp: new Date(),
             },
           ];
           return finalMessages;
         });
-      } else {
-        setMessages((old) => [...(old ?? []).slice(0, old.length - 1)]);
+      }, 2000);
+    } else {
+      try {
+        const response = await fetch(
+          "https://func-hlsbot-v1.azurewebsites.net/api/func-http-policy?",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              user_input: isLoggedIn ? 2 : 1,
+              policy_id: isLoggedIn ? policyInfo.policy_id : "",
+              query: text?.trim() ?? e?.message.text?.trim(),
+            }),
+          }
+        );
+        const data = await response.text();
+
+        if (data) {
+          setMessages((old) => {
+            const finalMessages = [
+              ...(old ?? []).slice(0, old.length - 2),
+              userMessage,
+              {
+                author: AUTHORS[1],
+                text: data,
+                timestamp: new Date(),
+              },
+            ];
+            return finalMessages;
+          });
+        } else {
+          setMessages((old) => [...(old ?? []).slice(0, old.length - 1)]);
+        }
+        // dispatch(setChatHistory(messages));
+      } catch (error) {
+        console.error(error);
       }
-      // dispatch(
-      //   setConversationMessages(
-      //     messages.map(({ timestamp, selectionIndex, ...rest }: any) => ({
-      //       ...rest,
-      //     }))
-      //   )
-      // );
-    } catch (error) {
-      console.error(error);
     }
   };
 

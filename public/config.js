@@ -48,6 +48,54 @@ window.config = {
         "https://openaidemoassets.blob.core.windows.net/personas/April.png",
     },
     {
+      id: 3,
+      url: "/problem-statement",
+      name: "Problem Statement",
+      icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_3.png",
+      arrowIcon: null,
+      order: 1,
+      componentId: 3,
+      componentName: "image",
+      componentParameters: [
+        {
+          id: 1,
+          key: "url",
+          value:
+            // "https://dreamdemoassets.blob.core.windows.net/nrf/telco_orgchart_updatedV2.png"
+            "",
+        },
+      ],
+      externalArrows: [],
+      personaId: 1,
+      personaName: "April",
+      personaImageUrl:
+        "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    },
+    {
+      id: 3,
+      url: "/solution-architecture",
+      name: "Solution Architecture",
+      icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_3.png",
+      arrowIcon: null,
+      order: 1,
+      componentId: 3,
+      componentName: "image",
+      componentParameters: [
+        {
+          id: 1,
+          key: "url",
+          value:
+            // "https://dreamdemoassets.blob.core.windows.net/nrf/telco_orgchart_updatedV2.png"
+            "",
+        },
+      ],
+      externalArrows: [],
+      personaId: 1,
+      personaName: "April",
+      personaImageUrl:
+        "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    },
+    {
       id: 1,
       url: "/mediguard-assurance-agent",
       name: "Mediguard Assurance Agent",
@@ -70,11 +118,35 @@ window.config = {
         "https://openaidemoassets.blob.core.windows.net/personas/April.png",
     },
     {
+      id: 3,
+      url: "/backend-video",
+      name: "Solution Backend",
+      title: "",
+      //  icon: "https://dreamdemoassets.blob.core.windows.net/sustainability/images/icon_video.png",
+      icon: "https://dreamdemoassets.blob.core.windows.net/daidemo/post-fabric-icon.png",
+      arrowIcon: "",
+      order: 1,
+      componentId: 3,
+      componentName: "Video",
+      componentParameters: [
+        {
+          key: "url",
+          value:
+            "https://dreamdemoassets.blob.core.windows.net/daidemo/videos/ADS_Migration_Video_V01.mp4",
+        },
+      ],
+      externalArrows: [],
+      personaId: 1,
+      personaName: "Anna",
+      personaImageUrl:
+        "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    },
+    {
       id: 142,
       url: "/contact-center-before",
       // title: "Contact Center - Before",
-      name: "Finale",
-      toolTip: "finale",
+      name: "Contact Us",
+      toolTip: "contact us",
       icon: "https://dreamdemoassets.blob.core.windows.net/nrf/left-nav-icons/dashboard_icon.png",
       arrowIcon: null,
       order: 4,
