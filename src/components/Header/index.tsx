@@ -10,7 +10,7 @@ import { useAppSelector } from "hooks";
 import styles from "./styles.module.scss";
 import { Helmet } from "react-helmet";
 import { Button } from "@progress/kendo-react-buttons";
-import Image from "./MediGuard.avif";
+import Image from "./logo.jpg";
 import WCT from "./WCT.png";
 
 interface Props {
@@ -36,7 +36,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
   return (
     <>
       <Helmet>
-        <title>MediGuard Assurance</title>
+        <title>WeCare Hospital</title>
       </Helmet>
       <AppBar className={styles.appBar} style={{}}>
         <AppBarSection>
@@ -59,7 +59,7 @@ export const Header: FC<Props> = ({ expanded, setExpanded }) => {
             )}
           </div>
         </AppBarSection>
-        <h4 style={{ marginLeft: "10px" }}>MediGuard Assurance</h4>
+        <h4 style={{ marginLeft: "10px",marginTop:"5px" }}>WeCare Hospital</h4>
         <AppBarSpacer />
 
         {/* <div className={styles.selectedComponentsText}>
