@@ -19,3 +19,6 @@ export * from "./CustomerReview";
 export * from "./ChatBot2";
 export * from "./NewShoppingCopilotForAIDesignWins";
 export * from "./NewShoppingMTCForAIDesignWins";
+export * from "./Architecture";
+export * from "./ProblemStatement";
+export * from "./Dashboard";

@@ -9,13 +9,13 @@ import {
 } from "@progress/kendo-react-conversational-ui";
 import { FC, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
-import Thankyou from "./Thankyou.png"
+import architecture from './architecture.png'
 
-export const ThankYou: FC = () => {
+export const Architecture: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <img src={Thankyou} alt="thank-you" />
+        <img src={architecture} alt="architecture" />
       </div>
     </div>
   );

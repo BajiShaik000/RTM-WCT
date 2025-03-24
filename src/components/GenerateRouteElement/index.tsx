@@ -25,6 +25,9 @@ import {
   GenerateEmail,
   ArchitectureOverview,
   NewShoppingMTCForAIDesignWins,
+  Architecture,
+  ProblemStatement,
+  Dashboards,
 } from "pages";
 import { CustomerReview } from "pages/CustomerReview";
 import { IncomingCall } from "pages/IncomingCall";
@@ -51,8 +54,6 @@ interface Props {
 const { landingPageImage } = window.config;
 
 export const GenerateRouteElement: FC<Props> = ({ data }) => {
- 
-
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setPersona(data?.personaImageUrl));
@@ -293,7 +294,13 @@ export const GenerateRouteElement: FC<Props> = ({ data }) => {
     case "call in progress":
       return <CallInProgress />;
     case "thank you":
-      return <ThankYou/>;
+      return <ThankYou />;
+    case "architecture":
+      return <Architecture />;
+    case "problem statement":
+      return <ProblemStatement />;
+    case "dashboard":
+      return <Dashboards/>;
     case "customer review":
       return (
         <CustomerReview liveHosted={data?.componentParameters?.liveHosted} />
