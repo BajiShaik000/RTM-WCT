@@ -9,7 +9,7 @@ import {
 } from "@progress/kendo-react-conversational-ui";
 import { FC, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
-import architecture from './architecture.png'
+import architecture from './architecture.jpg'
 
 export const Architecture: FC = () => {
   return (
