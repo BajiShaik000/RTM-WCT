@@ -127,7 +127,7 @@ window.config = {
       arrowIcon: "",
       order: 1,
       componentId: 3,
-      componentName: "Video",
+      componentName: "demo video",
       componentParameters: [
         {
           key: "url",
