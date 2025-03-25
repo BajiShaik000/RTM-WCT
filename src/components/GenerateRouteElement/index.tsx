@@ -32,6 +32,7 @@ import {
 import { CustomerReview } from "pages/CustomerReview";
 import { DemoVideo } from "pages/DemoVideo";
 import { IncomingCall } from "pages/IncomingCall";
+import { KPIS } from "pages/KPIS";
 import { NewShoppingCopilotForAIDesignWins } from "pages/NewShoppingCopilotForAIDesignWins";
 import { NewWebsite } from "pages/NewWebsite";
 import { NewWebsiteShoppingCopilot } from "pages/NewWebsiteShoppingCopilot";
@@ -304,6 +305,8 @@ export const GenerateRouteElement: FC<Props> = ({ data }) => {
       return <Dashboards />;
     case "demo video":
       return <DemoVideo />;
+    case "kpi":
+      return <KPIS />;
     case "customer review":
       return (
         <CustomerReview liveHosted={data?.componentParameters?.liveHosted} />

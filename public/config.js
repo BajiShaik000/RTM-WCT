@@ -171,8 +171,36 @@ window.config = {
         "https://openaidemoassets.blob.core.windows.net/personas/April.png",
     },
     {
+      id: 2,
+      url: "/KPI",
+      name: "KPI",
+      icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_4.png",
+      arrowIcon: null,
+      order: 1,
+      componentId: 3,
+      componentName: "kpi",
+      componentParameters: [
+        {
+          id: 1,
+          key: "url",
+          value:
+            "https://app.powerbi.com/groups/f94bb87b-e748-4eae-9ed6-01313579d374/reports/96509277-2e13-4365-a31d-24405cc351bf/ReportSectionae2d438d3737f6ada513?experience=power-bi",
+        },
+        {
+          id: 2,
+          key: "background",
+          value: "black",
+        },
+      ],
+      externalArrows: [],
+      personaId: 1,
+      personaName: "April",
+      personaImageUrl:
+        "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    },
+    {
       id: 142,
-      url: "/contact-center-before",
+      url: "/contact-us",
       // title: "Contact Center - Before",
       name: "Contact Us",
       toolTip: "contact us",
