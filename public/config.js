@@ -141,39 +141,39 @@ window.config = {
       personaImageUrl:
         "https://openaidemoassets.blob.core.windows.net/personas/April.png",
     },
-    {
-      url: "/dashboard",
-      name: "Dashboard",
-      icon: "https://dreamdemoassets.blob.core.windows.net/nrf/left-nav-icons/dashboard_icon.png",
-      arrowIcon: null,
-      order: 3,
-      componentId: 2,
-      componentName: "dashboard",
-      componentParameters: [
-        // {
-        //   key: "reportUrl",
-        //   value:
-        //     "https://app.powerbi.com/groups/102eb9b7-4dc0-449f-b9cb-e1b9432d00cd/reports/0a875433-9d0a-4806-83de-3cd51f91666b/ReportSection68cb8066934630a72b53?experience=power-bi&clientSideAuth=0",
-        // },
-        {
-          id: 303,
-          key: "url",
-          value:
-            // "https://app.powerbi.com/groups/7c79bda5-c68f-4eb5-ade9-3873ddb98c4d/kustodashboards/c64a1627-a88a-4da0-98d1-273dc8fda3c4?experience=power-bi&clientSideAuth=0&extensionScenario=openArtifact&v-_startTime=1hours&v-_endTime=now&page=f49df6fa-885c-4ca2-afb0-3a7f7aa879fe",
-            "https://app.powerbi.com/groups/7c79bda5-c68f-4eb5-ade9-3873ddb98c4d/reports/526b3f10-fe5a-49b0-b2a0-7c15da1f9497/35d7b1f49339aa737a23?experience=power-bi",
-        },
-      ],
-      externalArrows: [],
-      personaId: null,
-      personaName: "April",
-      personaDesignation: "Chief Executive Officer",
-      personaImageUrl:
-        "https://openaidemoassets.blob.core.windows.net/personas/April.png",
-    },
+    // {
+    //   url: "/dashboard",
+    //   name: "Dashboard",
+    //   icon: "https://dreamdemoassets.blob.core.windows.net/nrf/left-nav-icons/dashboard_icon.png",
+    //   arrowIcon: null,
+    //   order: 3,
+    //   componentId: 2,
+    //   componentName: "dashboard",
+    //   componentParameters: [
+    //     // {
+    //     //   key: "reportUrl",
+    //     //   value:
+    //     //     "https://app.powerbi.com/groups/102eb9b7-4dc0-449f-b9cb-e1b9432d00cd/reports/0a875433-9d0a-4806-83de-3cd51f91666b/ReportSection68cb8066934630a72b53?experience=power-bi&clientSideAuth=0",
+    //     // },
+    //     {
+    //       id: 303,
+    //       key: "url",
+    //       value:
+    //         // "https://app.powerbi.com/groups/7c79bda5-c68f-4eb5-ade9-3873ddb98c4d/kustodashboards/c64a1627-a88a-4da0-98d1-273dc8fda3c4?experience=power-bi&clientSideAuth=0&extensionScenario=openArtifact&v-_startTime=1hours&v-_endTime=now&page=f49df6fa-885c-4ca2-afb0-3a7f7aa879fe",
+    //         "https://app.powerbi.com/groups/7c79bda5-c68f-4eb5-ade9-3873ddb98c4d/reports/526b3f10-fe5a-49b0-b2a0-7c15da1f9497/35d7b1f49339aa737a23?experience=power-bi",
+    //     },
+    //   ],
+    //   externalArrows: [],
+    //   personaId: null,
+    //   personaName: "April",
+    //   personaDesignation: "Chief Executive Officer",
+    //   personaImageUrl:
+    //     "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    // },
     {
       id: 2,
       url: "/KPI",
-      name: "KPI",
+      name: "Executive Dashboard",
       icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_4.png",
       arrowIcon: null,
       order: 1,
