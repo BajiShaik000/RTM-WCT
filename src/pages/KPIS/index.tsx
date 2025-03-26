@@ -16,10 +16,10 @@ export const KPIS: FC = () => {
     <div className={styles.container}>
       <div className={styles.subContainer}>
         <iframe
-          title="Rpm-KPIs-bfr-aftr-v1 1"
+          title="Rpm-KPIs-v2"
           width="95%"
           height="100%"
-          src="https://app.powerbi.com/reportEmbed?reportId=a6a4b73e-07da-4e03-9939-5eea6308fdbf&autoAuth=true&ctid=e6e6c779-4c40-45d8-9921-00f00a06d3a8"
+          src="https://app.powerbi.com/reportEmbed?reportId=54c6e977-0a9a-4bd6-9879-4db3f73569b2&autoAuth=true&ctid=e6e6c779-4c40-45d8-9921-00f00a06d3a8"
           allowFullScreen
         ></iframe>
       </div>
