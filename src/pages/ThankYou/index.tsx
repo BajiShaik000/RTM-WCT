@@ -9,7 +9,7 @@ import {
 } from "@progress/kendo-react-conversational-ui";
 import { FC, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
-import Thankyou from "./Thankyou.png"
+import Thankyou from "./Thankyou.jpg"
 
 export const ThankYou: FC = () => {
   return (
