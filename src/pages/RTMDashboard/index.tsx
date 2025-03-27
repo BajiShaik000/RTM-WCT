@@ -10,14 +10,14 @@ import {
 import { FC, useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.scss";
 import problemStatement from "./problem_statement.png"
-import dashboard_before from "./dashboard_before.png"
+// import dashboard_before from "./dashboard_before.png"
 
-export const ProblemStatement: FC = () => {
+export const RTMDashboard: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
         {/* <h4>The goal is to help doctors watch chronic illnesses like diabetes or abnormal heart rate in real time from home, catch problems early, and make care easier for patients and providers.</h4> */}
-        <img src={dashboard_before} alt="architecture" />
+        {/* <img src={dashboard_before} alt="architecture" /> */}
       </div>
     </div>
   );

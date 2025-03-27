@@ -49,8 +49,8 @@ window.config = {
     },
     {
       id: 3,
-      url: "/problem-statement",
-      name: "Problem Statement",
+      url: "/executive-dashboard-before",
+      name: "Executive Dashboard - Before",
       icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_3.png",
       arrowIcon: null,
       order: 1,
@@ -96,6 +96,30 @@ window.config = {
         "https://openaidemoassets.blob.core.windows.net/personas/April.png",
     },
     // {
+    //   id: 3,
+    //   url: "/realtime-dashboard",
+    //   name: "Real Time Dashboard Monitoring",
+    //   icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_3.png",
+    //   arrowIcon: null,
+    //   order: 1,
+    //   componentId: 3,
+    //   componentName: "rtm dashboard",
+    //   componentParameters: [
+    //     {
+    //       id: 1,
+    //       key: "url",
+    //       value:
+    //         // "https://dreamdemoassets.blob.core.windows.net/nrf/telco_orgchart_updatedV2.png"
+    //         "",
+    //     },
+    //   ],
+    //   externalArrows: [],
+    //   personaId: 1,
+    //   personaName: "April",
+    //   personaImageUrl:
+    //     "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    // },
+    // {
     //   id: 1,
     //   url: "/mediguard-assurance-agent",
     //   name: "Mediguard Assurance Agent",
@@ -120,7 +144,7 @@ window.config = {
     {
       id: 3,
       url: "/backend-video",
-      name: "Solution Backend",
+      name: "Real Time Patient Monitoring",
       title: "",
       //  icon: "https://dreamdemoassets.blob.core.windows.net/sustainability/images/icon_video.png",
       icon: "https://dreamdemoassets.blob.core.windows.net/daidemo/post-fabric-icon.png",
@@ -173,7 +197,7 @@ window.config = {
     {
       id: 2,
       url: "/KPI",
-      name: "Executive Dashboard",
+      name: "Executive Dashboard - After",
       icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_4.png",
       arrowIcon: null,
       order: 1,

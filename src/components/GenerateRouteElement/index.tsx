@@ -41,6 +41,7 @@ import { OldWebsite } from "pages/OldWebsite";
 import { PredictChurn } from "pages/PredictChurn";
 import { ReImaginedNewWebsite } from "pages/ReImaginedNewWebsite";
 import { ReImaginedNewWebsiteScope } from "pages/ReImaginedNewWebsiteScope";
+import { RTMDashboard } from "pages/RTMDashboard";
 import { SetupWizardPersona } from "pages/SetupWizardPersona";
 import { ShoppingCopilotMTC } from "pages/ShoppingCopilotMTC";
 import { ThankYou } from "pages/ThankYou";
@@ -307,6 +308,8 @@ export const GenerateRouteElement: FC<Props> = ({ data }) => {
       return <DemoVideo />;
     case "kpi":
       return <KPIS />;
+    case "rtm dashboard":
+      return <RTMDashboard/>
     case "customer review":
       return (
         <CustomerReview liveHosted={data?.componentParameters?.liveHosted} />
