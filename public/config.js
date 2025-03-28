@@ -95,52 +95,31 @@ window.config = {
       personaImageUrl:
         "https://openaidemoassets.blob.core.windows.net/personas/April.png",
     },
-    // {
-    //   id: 3,
-    //   url: "/realtime-dashboard",
-    //   name: "Real Time Dashboard Monitoring",
-    //   icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_3.png",
-    //   arrowIcon: null,
-    //   order: 1,
-    //   componentId: 3,
-    //   componentName: "rtm dashboard",
-    //   componentParameters: [
-    //     {
-    //       id: 1,
-    //       key: "url",
-    //       value:
-    //         // "https://dreamdemoassets.blob.core.windows.net/nrf/telco_orgchart_updatedV2.png"
-    //         "",
-    //     },
-    //   ],
-    //   externalArrows: [],
-    //   personaId: 1,
-    //   personaName: "April",
-    //   personaImageUrl:
-    //     "https://openaidemoassets.blob.core.windows.net/personas/April.png",
-    // },
-    // {
-    //   id: 1,
-    //   url: "/mediguard-assurance-agent",
-    //   name: "Mediguard Assurance Agent",
-    //   icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_2.png",
-    //   arrowIcon: null,
-    //   order: 1,
-    //   componentId: 3,
-    //   componentName: "call in progress",
-    //   componentParameters: [
-    //     {
-    //       id: 1,
-    //       key: "url",
-    //       value: "",
-    //     },
-    //   ],
-    //   externalArrows: [],
-    //   personaId: 1,
-    //   personaName: "April",
-    //   personaImageUrl:
-    //     "https://openaidemoassets.blob.core.windows.net/personas/April.png",
-    // },
+    {
+      id: 3,
+      url: "/realtime-dashboard",
+      name: "Real Time Dashboard Monitoring",
+      icon: "https://nrfcdn.azureedge.net/left-nav-icons/icon1_3.png",
+      arrowIcon: null,
+      order: 1,
+      componentId: 3,
+      componentName: "rtm dashboard",
+      componentParameters: [
+        {
+          id: 1,
+          key: "url",
+          value:
+            // "https://dreamdemoassets.blob.core.windows.net/nrf/telco_orgchart_updatedV2.png"
+            "",
+        },
+      ],
+      externalArrows: [],
+      personaId: 1,
+      personaName: "April",
+      personaImageUrl:
+        "https://openaidemoassets.blob.core.windows.net/personas/April.png",
+    },
+    
     {
       id: 3,
       url: "/backend-video",
